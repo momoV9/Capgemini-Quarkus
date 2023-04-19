@@ -21,8 +21,10 @@ public class GenderResources {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getGender(@QueryParam("name") String name) {
         Gender gender = genderProxy.getGender(name);
-        return Response.ok(gender).build();
+        GenderDTO genderDTO = new GenderDTO(gender.getGender(), gender.getProbability());
+        return Response.ok(genderDTO).build();
     }
 }
+
 
 
