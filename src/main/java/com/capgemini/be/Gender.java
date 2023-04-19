@@ -2,10 +2,9 @@ package com.capgemini.be;
 
 public class Gender {
     private int count;
-
     private String gender;
-
     private String name;
+    private double probability;
 
     public int getCount() {
         return count;
@@ -38,7 +37,4 @@ public class Gender {
     public void setProbability(double probability) {
         this.probability = probability;
     }
-
-    private double probability;
-
 }
