@@ -17,14 +17,17 @@ public class FactsResources {
 FactsProxy factsProxy;
 
 
-//https://api.genderize.io/?name=willy
+
 @GET
 
 @Produces(MediaType.APPLICATION_JSON)
-public Response get(){
+public Response getF(){
 
     return Response.ok(factsProxy.getFact().getFact()).build();
 }
-@GET
-    @Path("/test")
+
 }
+
+
+
+
