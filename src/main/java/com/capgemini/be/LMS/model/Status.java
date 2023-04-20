@@ -1,4 +1,4 @@
-package com.capgemini.be.LTM.model;
+package com.capgemini.be.LMS.model;
 
 public enum Status {
     APPROVED,
