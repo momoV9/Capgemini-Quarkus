@@ -1,138 +1,125 @@
 package com.capgemini.be.LMS.model;
 
+import java.sql.Time;
+import java.util.Date;
+
 public class LeaveRequest {
     private int localEmployeeId;
-    private String employeeName;
     private LeaveType leaveType;
-    private int leaveAvailed;
-    private int year;
-    private int carryForward;
-    private int leaveLapsed;
-    private int leaveCredit;
-    private int leaveDebit;
-    private int leaveBalance;
+    private Date startDate;
+    private Date endDate;
+    private Time startHours;
+    private Time endDateHours;
+    private Time totalHours;
     private Unit unit;
-    private String buCountry;
     private Reason reason;
+    private Status status;
+
+    private LeaveRequest() {
+    }
+
+    public static class Builder {
+        private final int localEmployeeId;
+        private final LeaveType leaveType;
+        private final Date startDate;
+        private final Date endDate;
+
+        private Time startHours = null;
+        private Time endDateHours = null;
+        private Time totalHours = null;
+        private Unit unit = null;
+        private Reason reason = null;
+        private Status status = null;
 
 
-    public LeaveRequest(int localEmployeeId, String employeeName, LeaveType leaveType, int leaveAvailed, int year, int carryForward, int leaveLapsed, int leaveCredit, int leaveDebit, int leaveBalance, Unit unit, String buCountry, Reason reason) {
-        this.localEmployeeId = localEmployeeId;
-        this.employeeName = employeeName;
-        this.leaveType = leaveType;
-        this.leaveAvailed = leaveAvailed;
-        this.year = year;
-        this.carryForward = carryForward;
-        this.leaveLapsed = leaveLapsed;
-        this.leaveCredit = leaveCredit;
-        this.leaveDebit = leaveDebit;
-        this.leaveBalance = leaveBalance;
-        this.unit = unit;
-        this.buCountry = buCountry;
-        this.reason = reason;
+        public Builder(int localEmployeeId, LeaveType leaveType, Date startDate, Date endDate) {
+            this.localEmployeeId = localEmployeeId;
+            this.leaveType = leaveType;
+            this.startDate = startDate;
+            this.endDate = endDate;
+        }
+
+
+        public Builder startHours(Time startHours) {
+            this.startHours = startHours;
+            return this;
+        }
+
+        public Builder endDateHours(Time endDateHours) {
+            this.endDateHours = endDateHours;
+            return this;
+        }
+
+        public Builder totalHours(Time totalHours) {
+            this.totalHours = totalHours;
+            return this;
+        }
+
+        public Builder unit(Unit unit) {
+            this.unit = unit;
+            return this;
+        }
+
+        public Builder reason(Reason reason) {
+            this.reason = reason;
+            return this;
+        }
+
+        public Builder status(Status status) {
+            this.status = status;
+            return this;
+        }
+
+        public LeaveRequest build() {
+            LeaveRequest leaveRequest = new LeaveRequest();
+            leaveRequest.localEmployeeId = this.localEmployeeId;
+            leaveRequest.leaveType = this.leaveType;
+            leaveRequest.startDate = this.startDate;
+            leaveRequest.endDate = this.endDate;
+            leaveRequest.startHours = this.startHours;
+            leaveRequest.endDateHours = this.endDateHours;
+            leaveRequest.totalHours = this.totalHours;
+            leaveRequest.unit = this.unit;
+            leaveRequest.reason = this.reason;
+            leaveRequest.status = this.status;
+
+            return leaveRequest;
+        }
     }
 
     public int getLocalEmployeeId() {
         return localEmployeeId;
     }
 
-    public void setLocalEmployeeId(int localEmployeeId) {
-        this.localEmployeeId = localEmployeeId;
-    }
-
-    public String getEmployeeName() {
-        return employeeName;
-    }
-
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
-    }
-
     public LeaveType getLeaveType() {
         return leaveType;
     }
 
-    public void setLeaveType(LeaveType leaveType) {
-        this.leaveType = leaveType;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public int getLeaveAvailed() {
-        return leaveAvailed;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setLeaveAvailed(int leaveAvailed) {
-        this.leaveAvailed = leaveAvailed;
+    public Time getStartHours() {
+        return startHours;
     }
 
-    public int getYear() {
-        return year;
+    public Time getEndDateHours() {
+        return endDateHours;
     }
 
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getCarryForward() {
-        return carryForward;
-    }
-
-    public void setCarryForward(int carryForward) {
-        this.carryForward = carryForward;
-    }
-
-    public int getLeaveLapsed() {
-        return leaveLapsed;
-    }
-
-    public void setLeaveLapsed(int leaveLapsed) {
-        this.leaveLapsed = leaveLapsed;
-    }
-
-    public int getLeaveCredit() {
-        return leaveCredit;
-    }
-
-    public void setLeaveCredit(int leaveCredit) {
-        this.leaveCredit = leaveCredit;
-    }
-
-    public int getLeaveDebit() {
-        return leaveDebit;
-    }
-
-    public void setLeaveDebit(int leaveDebit) {
-        this.leaveDebit = leaveDebit;
-    }
-
-    public int getLeaveBalance() {
-        return leaveBalance;
-    }
-
-    public void setLeaveBalance(int leaveBalance) {
-        this.leaveBalance = leaveBalance;
+    public Time getTotalHours() {
+        return totalHours;
     }
 
     public Unit getUnit() {
         return unit;
     }
 
-    public void setUnit(Unit unit) {
-        this.unit = unit;
-    }
-
-    public String getBuCountry() {
-        return buCountry;
-    }
-
-    public void setBuCountry(String buCountry) {
-        this.buCountry = buCountry;
-    }
-
     public Reason getReason() {
         return reason;
-    }
-
-    public void setReason(Reason reason) {
-        this.reason = reason;
     }
 }
