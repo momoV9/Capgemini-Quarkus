@@ -1,15 +1,27 @@
 package com.capgemini.be.LMS.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.sql.Time;
 import java.util.Date;
 
 public class LeaveRequest {
     private int localEmployeeId;
     private LeaveType leaveType;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date startDate;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date endDate;
+
+    @JsonProperty("startHours")
     private Time startHours;
+
+    @JsonProperty("endDateHours")
     private Time endDateHours;
+
+    @JsonProperty("totalHours")
     private Time totalHours;
     private Unit unit;
     private Reason reason;
@@ -121,5 +133,9 @@ public class LeaveRequest {
 
     public Reason getReason() {
         return reason;
+    }
+
+    public Status getStatus() {
+        return status;
     }
 }
