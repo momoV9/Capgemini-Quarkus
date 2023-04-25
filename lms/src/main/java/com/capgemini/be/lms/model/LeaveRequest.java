@@ -1,29 +1,27 @@
-package com.capgemini.be.LMS.model;
+package com.capgemini.be.lms.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.sql.Time;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class LeaveRequest {
     private int localEmployeeId;
     private LeaveType leaveType;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private Date startDate;
+    private LocalDate startDate;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private Date endDate;
+    private LocalDate endDate;
 
-    @JsonProperty("startHours")
-    private Time startHours;
 
-    @JsonProperty("endDateHours")
-    private Time endDateHours;
+    private int startHours;
 
-    @JsonProperty("totalHours")
-    private Time totalHours;
-    private Unit unit;
+
+    private int endDateHours;
+
+
+    private int totalHours;
     private Reason reason;
     private Status status;
 
@@ -33,18 +31,17 @@ public class LeaveRequest {
     public static class Builder {
         private final int localEmployeeId;
         private final LeaveType leaveType;
-        private final Date startDate;
-        private final Date endDate;
+        private final LocalDate startDate;
+        private final LocalDate endDate;
 
-        private Time startHours = null;
-        private Time endDateHours = null;
-        private Time totalHours = null;
-        private Unit unit = null;
+        private int startHours;
+        private int endDateHours;
+        private int totalHours;
         private Reason reason = null;
         private Status status = null;
 
 
-        public Builder(int localEmployeeId, LeaveType leaveType, Date startDate, Date endDate) {
+        public Builder(int localEmployeeId, LeaveType leaveType, LocalDate startDate, LocalDate endDate) {
             this.localEmployeeId = localEmployeeId;
             this.leaveType = leaveType;
             this.startDate = startDate;
@@ -52,23 +49,18 @@ public class LeaveRequest {
         }
 
 
-        public Builder startHours(Time startHours) {
+        public Builder startHours(int startHours) {
             this.startHours = startHours;
             return this;
         }
 
-        public Builder endDateHours(Time endDateHours) {
+        public Builder endDateHours(int endDateHours) {
             this.endDateHours = endDateHours;
             return this;
         }
 
-        public Builder totalHours(Time totalHours) {
+        public Builder totalHours(int totalHours) {
             this.totalHours = totalHours;
-            return this;
-        }
-
-        public Builder unit(Unit unit) {
-            this.unit = unit;
             return this;
         }
 
@@ -91,7 +83,6 @@ public class LeaveRequest {
             leaveRequest.startHours = this.startHours;
             leaveRequest.endDateHours = this.endDateHours;
             leaveRequest.totalHours = this.totalHours;
-            leaveRequest.unit = this.unit;
             leaveRequest.reason = this.reason;
             leaveRequest.status = this.status;
 
@@ -107,28 +98,24 @@ public class LeaveRequest {
         return leaveType;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public Time getStartHours() {
+    public int getStartHours() {
         return startHours;
     }
 
-    public Time getEndDateHours() {
+    public int getEndDateHours() {
         return endDateHours;
     }
 
-    public Time getTotalHours() {
+    public int getTotalHours() {
         return totalHours;
-    }
-
-    public Unit getUnit() {
-        return unit;
     }
 
     public Reason getReason() {

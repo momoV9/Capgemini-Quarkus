@@ -1,6 +1,6 @@
 package com.capgemini.be.service;
 
-import com.capgemini.be.LMS.model.LeaveRequest;
+import com.capgemini.be.lms.model.LeaveRequest;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;

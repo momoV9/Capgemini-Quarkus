@@ -1,6 +1,6 @@
 package com.capgemini.be.controller;
 
-import com.capgemini.be.LMS.model.LeaveRequest;
+import com.capgemini.be.lms.model.LeaveRequest;
 import com.capgemini.be.service.LeaveRequestService;
 
 import javax.inject.Inject;

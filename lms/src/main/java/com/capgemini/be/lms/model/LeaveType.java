@@ -1,4 +1,4 @@
-package com.capgemini.be.LMS.model;
+package com.capgemini.be.lms.model;
 
 public enum LeaveType {
     VACATION,
