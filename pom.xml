@@ -12,6 +12,10 @@
         <module>clarity</module>
         <module>sync</module>
     </modules>
+    <properties>
+        <maven.compiler.source>20</maven.compiler.source>
+        <maven.compiler.target>20</maven.compiler.target>
+    </properties>
 
     <build>
         <plugins>
