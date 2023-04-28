@@ -89,6 +89,21 @@ public class LeaveRequest {
             return leaveRequest;
         }
     }
+    @Override
+    public String toString() {
+        return "LeaveRequest{" +
+                "localEmployeeId=" + localEmployeeId +
+                ", leaveType=" + leaveType +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", startHours=" + startHours +
+                ", endDateHours=" + endDateHours +
+                ", totalHours=" + totalHours +
+                ", reason=" + reason +
+                ", status=" + status +
+                '}';
+    }
+
 
     public int getLocalEmployeeId() {
         return localEmployeeId;

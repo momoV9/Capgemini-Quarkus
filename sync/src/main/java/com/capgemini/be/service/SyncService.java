@@ -1,5 +1,6 @@
 package com.capgemini.be.service;
 
+import com.capgemini.be.MyLogger;
 import com.capgemini.be.lms.model.LeaveRequest;
 import com.capgemini.be.proxy.SyncProxy;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
@@ -19,6 +20,10 @@ public class SyncService {
     @RestClient
     SyncProxy syncProxy;
 
+    public SyncService() {
+        MyLogger.setup();
+    }
+
     public LeaveRequest createLeaveRequest(LeaveRequest leaveRequest) {
         // create the leave request in the local database
         // ...
@@ -29,6 +34,7 @@ public class SyncService {
             if (response.getStatus() != Response.Status.OK.getStatusCode()) {
                 throw new WebApplicationException("Failed to sync leave request. Response code: " + response.getStatus());
             }
+            LOGGER.info("Leave request synced successfully: " + leaveRequest.toString());
         } catch (Exception e) {
             LOGGER.severe("Failed to sync leave request: " + e.getMessage());
             throw new WebApplicationException("Failed to sync leave request. Reason: " + e.getMessage());

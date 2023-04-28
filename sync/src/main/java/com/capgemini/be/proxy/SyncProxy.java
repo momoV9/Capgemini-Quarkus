@@ -13,7 +13,8 @@ import javax.ws.rs.core.Response;
 
 @Path("/sync")
 @Produces(MediaType.APPLICATION_JSON)
-@RegisterRestClient
+@RegisterRestClient(baseUri = "http://localhost:8080/leaves")
+
 public interface SyncProxy {
 
     @POST
