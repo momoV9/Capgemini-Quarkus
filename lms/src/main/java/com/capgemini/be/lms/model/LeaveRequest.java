@@ -25,7 +25,7 @@ public class LeaveRequest {
     private Reason reason;
     private Status status;
 
-    private LeaveRequest() {
+    public LeaveRequest() {
     }
 
     public static class Builder {

@@ -11,14 +11,14 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 
-@Path("/sync")
 @Produces(MediaType.APPLICATION_JSON)
-@RegisterRestClient(baseUri = "http://localhost:8080/leaves")
+@RegisterRestClient(baseUri = "http://localhost:8081")
+
 
 public interface SyncProxy {
 
     @POST
-    @Path("/leaves")
+    @Path("/sync")
     @Consumes(MediaType.APPLICATION_JSON)
     Response syncLeaveRequest(LeaveRequest leaveRequest);
 
