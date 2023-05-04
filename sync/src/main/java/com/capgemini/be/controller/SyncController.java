@@ -13,15 +13,20 @@ import javax.ws.rs.core.Response;
 
 @Path("/sync")
 @Produces(MediaType.APPLICATION_JSON)
-public class LeaveController {
+public class SyncController {
 
     @Inject
     SyncService syncService;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response createLeaveRequest(LeaveRequest leaveRequest) {
-        LeaveRequest createdRequest = syncService.createLeaveRequest(leaveRequest);
-        return Response.status(Response.Status.CREATED).entity(createdRequest).build();
+    public Response syncLeaveRequest(LeaveRequest leaveRequest) {
+        try {
+            syncService.syncLeaveRequest(leaveRequest);
+            return Response.ok().build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+        }
     }
 }
+
