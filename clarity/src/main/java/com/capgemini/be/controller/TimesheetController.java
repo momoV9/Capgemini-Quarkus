@@ -1,6 +1,6 @@
 package com.capgemini.be.controller;
 
-import com.capgemini.be.sync.model.TimeSheet;
+import com.capgemini.be.clarity.model.TimeSheet;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
