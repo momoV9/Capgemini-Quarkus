@@ -19,7 +19,7 @@ public class TimesheetController {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public TimeSheet createTimesheet(@RequestBody TimeSheet timesheet) {
+    public TimeSheet createTimesheet(TimeSheet timesheet) {
         LOGGER.info("Creating timesheet for user: " + timesheet.getUser());
         List<TimeSheet.TimesheetEntry> entries = timesheet.getEntries();
         for (int i = 0; i < entries.size(); i++) {
