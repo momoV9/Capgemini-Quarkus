@@ -140,4 +140,40 @@ public class LeaveRequest {
     public Status getStatus() {
         return status;
     }
+
+    public void setLocalEmployeeId(int localEmployeeId) {
+        this.localEmployeeId = localEmployeeId;
+    }
+
+    public void setLeaveType(LeaveType leaveType) {
+        this.leaveType = leaveType;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public void setStartHours(int startHours) {
+        this.startHours = startHours;
+    }
+
+    public void setEndDateHours(int endDateHours) {
+        this.endDateHours = endDateHours;
+    }
+
+    public void setTotalHours(int totalHours) {
+        this.totalHours = totalHours;
+    }
+
+    public void setReason(Reason reason) {
+        this.reason = reason;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }
