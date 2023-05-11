@@ -28,7 +28,7 @@ public class TimesheetMapper {
         TimeSheet.TimesheetEntry entry = new TimeSheet.TimesheetEntry();
         entry.setDate(leaveRequest.getStartDate());
         entry.setHours(leaveRequest.getStartHours() * 8);
-        entry.setInvestmentId("QAW-CD-&815-0135");
+        entry.setInvestmentId("investmentid123");
         return entry;
     }
 }
