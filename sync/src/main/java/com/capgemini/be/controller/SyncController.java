@@ -31,7 +31,7 @@ public class SyncController {
         sendToClarity(leaveRequest);
     }
 
-    private void sendToClarity(LeaveRequest leaveRequest) {
+    public void sendToClarity(LeaveRequest leaveRequest) {
         LOGGER.info("Sending timesheet to Clarity.");
         syncService.sendToClarity(timesheetMapper);
         timesheetMapper.map(leaveRequest);
