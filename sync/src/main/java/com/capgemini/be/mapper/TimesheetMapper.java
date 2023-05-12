@@ -2,13 +2,20 @@ package com.capgemini.be.mapper;
 
 import com.capgemini.be.clarity.model.TimeSheet;
 import com.capgemini.be.lms.model.LeaveRequest;
+import com.capgemini.be.lms.model.LeaveType;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @ApplicationScoped
 public class TimesheetMapper {
+
+    public TimesheetMapper() {
+        HashMap<String, String> investmentIdMapping = new HashMap<>();
+        investmentIdMapping.put("VACATION", "123456");
+    }
 
     public TimeSheet map(LeaveRequest leaveRequest) {
         TimeSheet timeSheet = new TimeSheet();
@@ -28,7 +35,11 @@ public class TimesheetMapper {
         TimeSheet.TimesheetEntry entry = new TimeSheet.TimesheetEntry();
         entry.setDate(leaveRequest.getStartDate());
         entry.setHours(leaveRequest.getStartHours() * 8);
-        entry.setInvestmentId("investmentid123");
+        entry.setInvestmentId(findInvestmentId(leaveRequest.getLeaveType()));
         return entry;
+    }
+
+    private String findInvestmentId(LeaveType leaveType) {
+        return "";
     }
 }
