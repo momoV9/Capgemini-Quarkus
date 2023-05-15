@@ -66,6 +66,14 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>${surefire-plugin.version}</version>
             </plugin>
+            <plugin>
+                <groupId>${quarkus.platform.group-id}</groupId>
+                <artifactId>quarkus-maven-plugin</artifactId>
+                <version>${quarkus.platform.version}</version>
+                <configuration>
+                    <debug>5007</debug>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
