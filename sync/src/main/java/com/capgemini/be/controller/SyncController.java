@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 @Path("/sync")
 public class SyncController {
 
-    private static final Logger LOGGER = Logger.getLogger(SyncController.class.getName());
+    public static Logger LOGGER = Logger.getLogger(SyncController.class.getName());
 
     @Inject
     SyncService syncService;
