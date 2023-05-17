@@ -28,7 +28,7 @@ jobs:
       - name: Set up Maven Wrapper
         run: |
           chmod +x ./mvnw
-          ./mvnw wrapper --maven-version 3.8.3
+          ./mvnw wrapper
 
       - name: Build with Maven Wrapper
         run: ./mvnw -DskipTests=true compile
