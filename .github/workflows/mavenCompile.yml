@@ -1,4 +1,5 @@
 name: Maven Build and Test
+
 on:
   push:
     branches:
@@ -19,7 +20,8 @@ jobs:
           java-package: 'jdk'
           architecture: 'x64'
 
-
+      - name: Set up Maven Wrapper
+        run: .\mvnw wrapper --distribution-type bin
 
       - name: Build with Maven
         run: .\mvnw compile
