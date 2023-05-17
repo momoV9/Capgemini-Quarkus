@@ -1,7 +1,9 @@
 package com.capgemini.be.controller;
 
-import com.capgemini.be.lms.model.LeaveRequest;
+import com.capgemini.be.model.MetricsEntry;
+import com.capgemini.be.repository.MetricsRepository;
 
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -12,8 +14,11 @@ import java.util.List;
 @Path("/metrics")
 public class MetricsController {
 
+    @Inject
+    MetricsRepository metricsRepository;
+
     @GET
-    public List<LeaveRequest> getMetrics() {
-        return null;
+    public List<MetricsEntry> getMetrics() {
+        return metricsRepository.getAllEntries();
     }
 }
