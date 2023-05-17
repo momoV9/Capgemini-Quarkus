@@ -6,30 +6,20 @@ import com.capgemini.be.lms.model.Reason;
 import com.capgemini.be.lms.model.Status;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.MockitoAnnotations;
+
+import javax.ws.rs.core.MediaType;
 
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @QuarkusTest
-public class SyncControllerTest {
-
-
-    public SyncControllerTest() {
-    }
-
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-    }
+public class LeaveRequestControllerTest {
 
     @Test
-    public void testSyncLeaveRequest() {
+    public void testSendLeaveRequestToSync() {
         // Arrange
         LeaveRequest leaveRequest = new LeaveRequest();
         leaveRequest.setLocalEmployeeId(1);
@@ -42,10 +32,10 @@ public class SyncControllerTest {
 
         // Act
         Response response = RestAssured.given()
-                .contentType(ContentType.JSON)
+                .contentType(MediaType.APPLICATION_JSON)
                 .body(leaveRequest)
                 .when()
-                .post("/sync")
+                .post("/leaves")
                 .then()
                 .extract()
                 .response();

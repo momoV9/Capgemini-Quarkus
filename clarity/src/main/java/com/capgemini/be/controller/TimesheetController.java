@@ -1,7 +1,6 @@
 package com.capgemini.be.controller;
 
 import com.capgemini.be.clarity.model.TimeSheet;
-import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
