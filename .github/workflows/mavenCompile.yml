@@ -8,12 +8,8 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    steps:
-      - name: Set up Node.js 16
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
 
+    steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -25,13 +21,8 @@ jobs:
           java-package: 'jdk'
           architecture: 'x64'
 
-      - name: Set up Maven Wrapper
-        run: |
-          chmod +x ./mvnw
-          ./mvnw wrapper
-
-      - name: Build with Maven Wrapper
-        run: ./mvnw -DskipTests=true compile
+      - name: Build with Maven
+        run: mvn -B -DskipTests=true compile
 
       - name: Run Unit Tests
-        run: ./mvnw test
+        run: mvn -B test
