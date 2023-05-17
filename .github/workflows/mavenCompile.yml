@@ -3,7 +3,11 @@ name: Maven Build and Test
 on:
   push:
     branches:
-      - GA
+      - master
+
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build-and-test:
