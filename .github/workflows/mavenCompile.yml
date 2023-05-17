@@ -21,16 +21,10 @@ jobs:
           architecture: 'x64'
 
       - name: Set up Maven Wrapper
-        run: .\mvnw wrapper --distribution-type bin
+        run: mvn wrapper --distribution-type bin
 
       - name: Build with Maven
-        env:
-          DISTRIBUTION: wrapper
-        run: |
-          ./mvnw -Dmaven.repo.local=repo compile
-          MAVEN_OPTS="-Dmaven.repo.local=repo" ./mvnw -Dmaven.repo.local=repo compile
+        run: mvn -B -DskipTests=true compile
 
       - name: Run Unit Tests
-        env:
-          MAVEN_OPTS: -Dmaven.repo.local=repo
-        run: ./mvnw -Dmaven.repo.local=repo test
+        run: mvn -B test
