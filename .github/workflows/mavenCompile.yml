@@ -24,13 +24,13 @@ jobs:
         run: .\mvnw wrapper --distribution-type bin
 
       - name: Build with Maven
-        run: .\mvnw -Dmaven.repo.local=repo compile
         env:
-          MAVEN_OPTS: -Dmaven.repo.local=repo
-        with:
-          distribution: wrapper
+          DISTRIBUTION: wrapper
+        run: |
+          ./mvnw -Dmaven.repo.local=repo compile
+          MAVEN_OPTS="-Dmaven.repo.local=repo" ./mvnw -Dmaven.repo.local=repo compile
 
       - name: Run Unit Tests
-        run: .\mvnw -Dmaven.repo.local=repo test
         env:
           MAVEN_OPTS: -Dmaven.repo.local=repo
+        run: ./mvnw -Dmaven.repo.local=repo test
