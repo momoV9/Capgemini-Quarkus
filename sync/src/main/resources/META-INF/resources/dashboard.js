@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const dashboardDataElement = document.getElementById('dashboard-data');
             data.forEach(entry => {
                 const row = document.createElement('tr');
-                row.innerHTML =
+                row.innerHTML = `
                     <td>${entry.user}</td>
-                <td>${entry.startDate} - ${entry.endDate}</td>
-                <td>${entry.leaveType}</td>
-                <td>${entry.hours}</td>
-                ;
+                    <td>${entry.startDate} - ${entry.endDate}</td>
+                    <td>${entry.leaveType}</td>
+                    <td>${entry.hours}</td>
+                `;
                 dashboardDataElement.appendChild(row);
             });
         })
