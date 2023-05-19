@@ -18,6 +18,7 @@ public class MetricsController {
     MetricsRepository metricsRepository;
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     public List<MetricsEntry> getMetrics() {
         return metricsRepository.getAllEntries();
     }
