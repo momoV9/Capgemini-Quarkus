@@ -8,25 +8,21 @@ h1 {
     text-align: center;
 }
 
-#dashboard-container {
-    margin-top: 20px;
-}
-
-#dashboard-table {
+.datagrid {
     width: 100%;
     border-collapse: collapse;
 }
 
-#dashboard-table th, #dashboard-table td {
+.datagrid th, .datagrid td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: center;
 }
 
-#dashboard-table th {
+.datagrid th {
     background-color: #f2f2f2;
 }
 
-#dashboard-data tr:nth-child(even) {
+.datagrid tr:nth-child(even) {
     background-color: #f2f2f2;
 }
