@@ -1,4 +1,4 @@
-# stage-helloworld
+# Quarkus internship project: Sync
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
