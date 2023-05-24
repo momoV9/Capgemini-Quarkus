@@ -8,9 +8,9 @@ import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
-import org.mockito.MockitoAnnotations;
+
 
 import java.time.LocalDate;
 
@@ -18,15 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @QuarkusTest
 public class SyncControllerTest {
-
-
-    public SyncControllerTest() {
-    }
-
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-    }
 
     @Test
     public void testSyncLeaveRequest() {
