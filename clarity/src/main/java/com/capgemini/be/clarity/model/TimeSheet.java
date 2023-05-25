@@ -29,15 +29,19 @@ public class TimeSheet {
         private int hours;
         private String investmentId;
 
-        private String Investment;
+        private String investment;
 
         public String getInvestment() {
-            return Investment;
+            return investment;
         }
 
         public void setInvestment(String investment) {
-            Investment = investment;
+            this.investment = investment;
         }
+
+
+
+
 
         public LocalDate getDate() {
             return date;

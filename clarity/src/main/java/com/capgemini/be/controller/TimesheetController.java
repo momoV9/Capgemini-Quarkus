@@ -37,17 +37,18 @@ public class TimesheetController {
             LOGGER.info("Date: " + entry.getDate());
             LOGGER.info("Hours: " + entry.getHours());
             LOGGER.info("Investment ID: " + entry.getInvestmentId());
+            LOGGER.info("Investment: " + entry.getInvestment());
         }
 
         return Response.ok(timesheet).build();
     }
 
-    private TimeSheet.TimesheetEntry createTimesheetEntry(String date,String Investment, int hours, String investmentId) {
+    private TimeSheet.TimesheetEntry createTimesheetEntry(String date,String investment, int hours, String investmentId) {
         TimeSheet.TimesheetEntry entry = new TimeSheet.TimesheetEntry();
         entry.setDate(LocalDate.parse(date));
         entry.setHours(hours);
         entry.setInvestmentId(investmentId);
-        entry.setInvestment(Investment);
+        entry.setInvestment(investment);
         return entry;
     }
 }
