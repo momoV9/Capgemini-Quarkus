@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leave Request Submission</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<h1>Leave Request Submission</h1>
+<form id="leaveRequestForm" onsubmit="submitLeaveRequest(event)">
+    <label for="localEmployeeId">Local Employee ID:</label>
+    <input type="text" id="localEmployeeId" name="localEmployeeId" required><br>
+
+    <label for="leaveType">Leave Type:</label>
+    <select id="leaveType" name="leaveType" required>
+        <option value="VACATION">Vacation</option>
+        <option value="SICK">Sick</option>
+        <option value="PARENTAL">Parental</option>
+        <option value="OTHER">Other</option>
+    </select><br>
+
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate" required><br>
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate" required><br>
+
+    <label for="startHours">Start Hours:</label>
+    <input type="number" id="startHours" name="startHours" required><br>
+
+    <label for="endDateHours">End Date Hours:</label>
+    <input type="number" id="endDateHours" name="endDateHours" required><br>
+
+    <label for="totalHours">Total Hours:</label>
+    <input type="number" id="totalHours" name="totalHours" required><br>
+
+    <label for="reason">Reason:</label>
+    <select id="reason" name="reason" required>
+        <option value="MARRIAGE">Marriage</option>
+        <option value="BEREAVEMENT">Bereavement</option>
+        <option value="CARE">Care</option>
+        <option value="OTHER">Other</option>
+    </select><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
