@@ -66,6 +66,7 @@
                     <target>17</target>
                     <source>17</source>
                     <encoding>UTF-8</encoding>
+                    <release>17</release>
                 </configuration>
             </plugin>
         </plugins>
