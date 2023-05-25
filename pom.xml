@@ -23,7 +23,6 @@
         <quarkus.platform.version>2.16.6.Final</quarkus.platform.version>
         <sonar.organization>momov9</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <maven.home>C:\Program Files\apache-maven-3.9.1</maven.home>
     </properties>
 
     <dependencyManagement>
