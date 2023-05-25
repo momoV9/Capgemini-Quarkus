@@ -6,19 +6,23 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<h1>Timesheet Search</h1>
-<label for="searchBox">User ID:</label>
-<input type="text" id="searchBox" placeholder="Enter user ID">
-<button onclick="searchTimesheet()">Search</button>
+<div class="container">
+    <h1>Timesheet Search</h1>
+    <div class="search-container">
+        <label for="searchBox">User ID:</label>
+        <input type="text" id="searchBox" placeholder="Enter user ID">
+        <button onclick="searchTimesheet()">Search</button>
+    </div>
 
-<table id="timesheetTable">
-    <tr>
-        <th>Date</th>
-        <th>Investment</th>
-        <th>Investment ID</th>
-        <th>Hours</th>
-    </tr>
-</table>
+    <table id="timesheetTable">
+        <tr>
+            <th>Date</th>
+            <th>Investment</th>
+            <th>Investment ID</th>
+            <th>Hours</th>
+        </tr>
+    </table>
+</div>
 
 <script src="script.js"></script>
 </body>
