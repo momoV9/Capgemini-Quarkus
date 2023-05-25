@@ -14,8 +14,9 @@
     </modules>
     <properties>
         <resources-plugin.version>3.3.1</resources-plugin.version>
-        <surefire-plugin.version>3.0.0</surefire-plugin.version>
+        <surefire-plugin.version>3.1.0</surefire-plugin.version>
         <compiler-plugin.version>3.11.0</compiler-plugin.version>
+        <quarkus-resteasy-reactive-jackson.version>3.1.0.CR1</quarkus-resteasy-reactive-jackson.version>
         <skipITs>true</skipITs>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
