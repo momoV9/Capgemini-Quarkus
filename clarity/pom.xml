@@ -51,14 +51,6 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>${quarkus.platform.group-id}</groupId>
-                <artifactId>quarkus-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${compiler-plugin.version}</version>
-            </plugin>
-            <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire-plugin.version}</version>
             </plugin>
@@ -72,6 +64,16 @@
                 <version>${quarkus.platform.version}</version>
                 <configuration>
                     <debug>5007</debug>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <target>17</target>
+                    <source>17</source>
+                    <encoding>UTF-8</encoding>
+                    <release>17</release>
                 </configuration>
             </plugin>
         </plugins>
