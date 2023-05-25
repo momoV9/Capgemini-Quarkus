@@ -29,6 +29,16 @@ public class TimeSheet {
         private int hours;
         private String investmentId;
 
+        private String Investment;
+
+        public String getInvestment() {
+            return Investment;
+        }
+
+        public void setInvestment(String investment) {
+            Investment = investment;
+        }
+
         public LocalDate getDate() {
             return date;
         }
