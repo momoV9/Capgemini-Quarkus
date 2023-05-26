@@ -27,7 +27,7 @@ public class LeaveRequestControllerTest {
     }
 
     @Test
-     void SendLeaveRequestToSync() {
+    public void testSendToSync() {
         // Arrange
         LeaveRequest leaveRequest = new LeaveRequest();
 
@@ -36,7 +36,7 @@ public class LeaveRequestControllerTest {
         leaveRequestController.leaveRequestClient = mockLeaveRequestClient;
 
         // Act
-        leaveRequestController.sendToSync(leaveRequest);
+        leaveRequestController.SendLeaveRequestToSync(leaveRequest);
 
         // Assert
         LeaveRequest capturedRequest = mockLeaveRequestClient.getCapturedLeaveRequest();
