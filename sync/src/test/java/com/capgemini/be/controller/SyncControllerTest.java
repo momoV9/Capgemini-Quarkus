@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SyncControllerTest {
 
     @Test
-    public void testSyncLeaveRequest() {
+    void testSyncLeaveRequest() {
         // Arrange
         LeaveRequest leaveRequest = new LeaveRequest();
         leaveRequest.setLocalEmployeeId(1);

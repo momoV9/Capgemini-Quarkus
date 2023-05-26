@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 
 @QuarkusTest
-public class MetricsControllerTest {
+class MetricsControllerTest {
 
     @Test
-    public void testMetricsEndpointReturns200() {
+    void testMetricsEndpointReturns200() {
         given()
                 .when()
                 .get("http://localhost:8081/metrics")

@@ -9,10 +9,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MetricsRepositoryTest {
+  class MetricsRepositoryTest {
 
     @Test
-    public void testPaginationReturnsCorrectData() {
+     void testPaginationReturnsCorrectData() {
         MetricsRepository repository = new MetricsRepository();
 
         int offset = 0;
@@ -34,7 +34,7 @@ public class MetricsRepositoryTest {
     }
 
     @Test
-    public void testPaginationReturnsEmptyListWhenOffsetOutOfRange() {
+     void testPaginationReturnsEmptyListWhenOffsetOutOfRange() {
         MetricsRepository repository = new MetricsRepository();
 
         int offset = 100;
