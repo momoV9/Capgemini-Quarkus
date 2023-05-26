@@ -21,7 +21,7 @@ public class LeaveRequestController {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void SendLeaveRequestToSync(LeaveRequest leaveRequest) {
+    public void sendLeaveRequestToSync(LeaveRequest leaveRequest) {
         leaveRequestClient.sendDataToSync(leaveRequest);
     }
 }
