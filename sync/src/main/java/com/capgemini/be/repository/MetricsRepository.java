@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @ApplicationScoped
 public class MetricsRepository {
     private final List<MetricsEntry> metricsCollection;
@@ -26,10 +25,25 @@ public class MetricsRepository {
         metricsCollection.add(new MetricsEntry("Olivia Turner", LocalDate.parse("2023-05-20"), LocalDate.parse("2023-05-21"), LeaveType.SICK, 8));
         metricsCollection.add(new MetricsEntry("Jacob Rodriguez", LocalDate.parse("2023-05-21"), LocalDate.parse("2023-05-22"), LeaveType.VACATION, 16));
         metricsCollection.add(new MetricsEntry("Emily Young", LocalDate.parse("2023-05-22"), LocalDate.parse("2023-05-23"), LeaveType.PARENTAL, 24));
-        metricsCollection.add(new MetricsEntry("William King", LocalDate.parse("2023-05-23"), LocalDate.parse("2023-05-24"), LeaveType.SICK, 8));
-    }
+        metricsCollection.add(new MetricsEntry("Emily Smith", LocalDate.parse("2023-05-22"), LocalDate.parse("2023-05-23"), LeaveType.PARENTAL, 24));
+        metricsCollection.add(new MetricsEntry("William Johnson", LocalDate.parse("2023-05-23"), LocalDate.parse("2023-05-24"), LeaveType.SICK, 8));
+        metricsCollection.add(new MetricsEntry("Sophie Anderson", LocalDate.parse("2023-05-24"), LocalDate.parse("2023-05-25"), LeaveType.VACATION, 16));
+        metricsCollection.add(new MetricsEntry("Alexander Davis", LocalDate.parse("2023-05-25"), LocalDate.parse("2023-05-26"), LeaveType.PARENTAL, 24));
+        metricsCollection.add(new MetricsEntry("Emma Wilson", LocalDate.parse("2023-05-26"), LocalDate.parse("2023-05-27"), LeaveType.SICK, 8));
+        metricsCollection.add(new MetricsEntry("Noah Clark", LocalDate.parse("2023-05-27"), LocalDate.parse("2023-05-28"), LeaveType.VACATION, 16));
+        metricsCollection.add(new MetricsEntry("Oliver Turner", LocalDate.parse("2023-05-28"), LocalDate.parse("2023-05-29"), LeaveType.PARENTAL, 24));
+        metricsCollection.add(new MetricsEntry("Isabella Rodriguez", LocalDate.parse("2023-05-29"), LocalDate.parse("2023-05-30"), LeaveType.SICK, 8));
+        metricsCollection.add(new MetricsEntry("Mia Young", LocalDate.parse("2023-05-30"), LocalDate.parse("2023-05-31"), LeaveType.VACATION, 16));
+        metricsCollection.add(new MetricsEntry("James Thompson", LocalDate.parse("2023-05-31"), LocalDate.parse("2023-06-01"), LeaveType.PARENTAL, 24));
 
-    public List<MetricsEntry> getAllEntries() {
-        return new ArrayList<>(metricsCollection);
+    }
+    public List<MetricsEntry> getEntriesWithPagination(int offset, int pageSize) {
+        int endIndex = Math.min(offset + pageSize, metricsCollection.size());
+
+        if (offset >= metricsCollection.size()) {
+            return new ArrayList<>();
+        }
+
+        return metricsCollection.subList(offset, endIndex);
     }
 }
