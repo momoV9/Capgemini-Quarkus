@@ -27,7 +27,7 @@ public class LeaveRequestControllerTest {
     }
 
     @Test
-    public void testSendToSync() {
+    void SendLeaveRequestToSync() {
         // Arrange
         LeaveRequest leaveRequest = new LeaveRequest();
 
