@@ -30,7 +30,7 @@ public class SyncController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void sendLeaveRequestToClarity(LeaveRequest leaveRequest) {
-        logger.info("Received leave request: " + leaveRequest);
+        logger.info("Received leave request: {}" + leaveRequest);
         TimeSheet timeSheet = timesheetMapper.transformToTimesheet(leaveRequest);
         syncClient.sendTimesheetToClarity(timeSheet);
     }
