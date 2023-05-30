@@ -1,9 +1,9 @@
-package com.capgemini.be.controller;
+package com.capgemini.sync.controller;
 
-import com.capgemini.be.clarity.model.TimeSheet;
-import com.capgemini.be.client.SyncClient;
-import com.capgemini.be.lms.model.LeaveRequest;
-import com.capgemini.be.mapper.TimesheetMapper;
+import com.capgemini.sync.client.SyncClient;
+import com.capgemini.sync.mapper.TimesheetMapper;
+import com.capgemini.sync.model.LeaveRequest;
+import com.capgemini.sync.model.TimeSheet;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.inject.Inject;
@@ -30,7 +30,7 @@ public class SyncController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void sendLeaveRequestToClarity(LeaveRequest leaveRequest) {
-        logger.info("Received Leave request" + leaveRequest);
+        logger.info("Received Leaverequest: " + leaveRequest );
         TimeSheet timeSheet = timesheetMapper.transformToTimesheet(leaveRequest);
         syncClient.sendTimesheetToClarity(timeSheet);
     }

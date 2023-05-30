@@ -1,6 +1,6 @@
-package com.capgemini.be.controller;
+package com.capgemini.clarity.controller;
 
-import com.capgemini.be.clarity.model.TimeSheet;
+import com.capgemini.clarity.model.TimeSheet;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;

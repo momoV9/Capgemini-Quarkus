@@ -1,4 +1,4 @@
-package com.capgemini.be.clarity.model;
+package com.capgemini.sync.model;
 
 import java.time.LocalDate;
 import java.util.List;

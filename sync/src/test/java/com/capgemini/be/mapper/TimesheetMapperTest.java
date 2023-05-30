@@ -1,7 +1,8 @@
 package com.capgemini.be.mapper;
 
-import com.capgemini.be.clarity.model.TimeSheet;
-import com.capgemini.be.lms.model.LeaveRequest;
+import com.capgemini.sync.mapper.TimesheetMapper;
+import com.capgemini.sync.model.LeaveRequest;
+import com.capgemini.sync.model.TimeSheet;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -9,8 +10,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-
-public class TimesheetMapperTest {
+class TimesheetMapperTest {
     private LeaveRequest leaveRequest;
     private final TimesheetMapper mapper = new TimesheetMapper();
 

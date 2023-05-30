@@ -1,6 +1,6 @@
 package com.capgemini.be.controller;
 
-import com.capgemini.be.clarity.model.TimeSheet;
+import com.capgemini.clarity.model.TimeSheet;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;

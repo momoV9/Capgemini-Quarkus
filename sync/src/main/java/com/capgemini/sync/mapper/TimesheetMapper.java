@@ -1,20 +1,20 @@
-package com.capgemini.be.mapper;
+package com.capgemini.sync.mapper;
 
-import com.capgemini.be.clarity.model.TimeSheet;
-import com.capgemini.be.lms.model.LeaveRequest;
-import com.capgemini.be.lms.model.LeaveType;
+import com.capgemini.sync.model.LeaveRequest;
+import com.capgemini.sync.model.LeaveType;
+import com.capgemini.sync.model.TimeSheet;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.List;
 
 @ApplicationScoped
 public class TimesheetMapper {
-
+    private final EnumMap<LeaveType, String> investmentIdMapping;
     public TimesheetMapper() {
-        HashMap<String, String> investmentIdMapping = new HashMap<>();
-        investmentIdMapping.put("VACATION", "123456");
+        investmentIdMapping = new EnumMap<>(LeaveType.class);
+        investmentIdMapping.put(LeaveType.VACATION, "123456");
     }
 
     public TimeSheet transformToTimesheet(LeaveRequest leaveRequest) {
@@ -40,6 +40,6 @@ public class TimesheetMapper {
     }
 
     private String findInvestmentId(LeaveType leaveType) {
-        return "";
+        return investmentIdMapping.getOrDefault(leaveType, "");
     }
 }

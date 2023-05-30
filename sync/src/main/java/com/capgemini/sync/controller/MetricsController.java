@@ -1,7 +1,7 @@
-package com.capgemini.be.controller;
+package com.capgemini.sync.controller;
 
-import com.capgemini.be.model.MetricsEntry;
-import com.capgemini.be.repository.MetricsRepository;
+import com.capgemini.sync.model.MetricsEntry;
+import com.capgemini.sync.repository.MetricsRepository;
 
 import javax.inject.Inject;
 import javax.ws.rs.DefaultValue;
