@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 @Path("/sync")
 public class SyncController {
 
-    public static Logger LOGGER = Logger.getLogger(SyncController.class.getName());
+    public static final Logger logger = Logger.getLogger(SyncController.class.getName());
 
     @Inject
     TimesheetMapper timesheetMapper;
@@ -30,7 +30,7 @@ public class SyncController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void sendLeaveRequestToClarity(LeaveRequest leaveRequest) {
-        LOGGER.info("Received leave request: " + leaveRequest);
+        logger.info("Received leave request: " + leaveRequest);
         TimeSheet timeSheet = timesheetMapper.transformToTimesheet(leaveRequest);
         syncClient.sendTimesheetToClarity(timeSheet);
     }
