@@ -17,7 +17,7 @@ public class TimesheetMapper {
         investmentIdMapping.put("VACATION", "123456");
     }
 
-    public TimeSheet map(LeaveRequest leaveRequest) {
+    public TimeSheet transformToTimesheet(LeaveRequest leaveRequest) {
         TimeSheet timeSheet = new TimeSheet();
         timeSheet.setUser(leaveRequest.getLocalEmployeeId());
         timeSheet.setEntries(createEntries(leaveRequest));
