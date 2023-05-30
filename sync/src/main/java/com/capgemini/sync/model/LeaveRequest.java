@@ -1,4 +1,4 @@
-package com.capgemini.be.lms.model;
+package com.capgemini.sync.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -24,9 +24,6 @@ public class LeaveRequest {
     private int totalHours;
     private Reason reason;
     private Status status;
-
-    public LeaveRequest() {
-    }
 
     public static class Builder {
         private final int localEmployeeId;
@@ -89,6 +86,7 @@ public class LeaveRequest {
             return leaveRequest;
         }
     }
+
     @Override
     public String toString() {
         return "LeaveRequest{" +

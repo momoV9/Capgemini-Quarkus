@@ -1,6 +1,7 @@
 package com.capgemini.be.repository;
 
-import com.capgemini.be.model.MetricsEntry;
+import com.capgemini.sync.model.MetricsEntry;
+import com.capgemini.sync.repository.MetricsRepository;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

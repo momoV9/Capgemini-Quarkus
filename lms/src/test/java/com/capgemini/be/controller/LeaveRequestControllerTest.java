@@ -1,7 +1,8 @@
 package com.capgemini.be.controller;
 
-import com.capgemini.be.client.LeaveRequestClient;
-import com.capgemini.be.lms.model.LeaveRequest;
+import com.capgemini.lms.client.LeaveRequestClient;
+import com.capgemini.lms.controller.LeaveRequestController;
+import com.capgemini.lms.model.LeaveRequest;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,7 @@ import javax.ws.rs.core.Response;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @QuarkusTest
-public class LeaveRequestControllerTest {
+ class LeaveRequestControllerTest {
 
     private static class MockLeaveRequestClient implements LeaveRequestClient {
         private LeaveRequest capturedLeaveRequest;

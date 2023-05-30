@@ -1,6 +1,5 @@
-package com.capgemini.be.model;
+package com.capgemini.sync.model;
 
-import com.capgemini.be.lms.model.LeaveType;
 
 import java.time.LocalDate;
 

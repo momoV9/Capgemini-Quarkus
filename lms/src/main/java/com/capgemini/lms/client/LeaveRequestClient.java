@@ -1,6 +1,6 @@
-package com.capgemini.be.client;
+package com.capgemini.lms.client;
 
-import com.capgemini.be.lms.model.LeaveRequest;
+import com.capgemini.lms.model.LeaveRequest;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 

@@ -1,4 +1,4 @@
-package com.capgemini.be.lms.model;
+package com.capgemini.lms.model;
 
 public enum Reason {
     MARRIAGE,

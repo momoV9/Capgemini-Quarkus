@@ -1,7 +1,7 @@
-package com.capgemini.be.controller;
+package com.capgemini.lms.controller;
 
-import com.capgemini.be.client.LeaveRequestClient;
-import com.capgemini.be.lms.model.LeaveRequest;
+import com.capgemini.lms.client.LeaveRequestClient;
+import com.capgemini.lms.model.LeaveRequest;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.inject.Inject;
@@ -17,6 +17,7 @@ public class LeaveRequestController {
 
     @Inject
     @RestClient
+    public
     LeaveRequestClient leaveRequestClient;
 
     @POST

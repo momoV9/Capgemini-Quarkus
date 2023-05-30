@@ -1,7 +1,7 @@
-package com.capgemini.be.repository;
+package com.capgemini.sync.repository;
 
-import com.capgemini.be.lms.model.LeaveType;
-import com.capgemini.be.model.MetricsEntry;
+import com.capgemini.sync.model.LeaveType;
+import com.capgemini.sync.model.MetricsEntry;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.time.LocalDate;
