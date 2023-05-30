@@ -23,7 +23,7 @@ public class TimesheetMapperTest {
         leaveRequest.setStartHours(1);
 
         // Act
-        TimeSheet timeSheet = mapper.map(leaveRequest);
+        TimeSheet timeSheet = mapper.transformToTimesheet(leaveRequest);
 
         // Assert
         assertNotNull(timeSheet);
@@ -44,7 +44,7 @@ public class TimesheetMapperTest {
         leaveRequest.setStartHours(8);
 
         // Act
-        TimeSheet timeSheet = mapper.map(leaveRequest);
+        TimeSheet timeSheet = mapper.transformToTimesheet(leaveRequest);
 
         // Assert
         assertEquals(1, timeSheet.getEntries().size());
@@ -64,7 +64,7 @@ public class TimesheetMapperTest {
         leaveRequest.setStartHours(4);
 
         // Act
-        TimeSheet timeSheet = mapper.map(leaveRequest);
+        TimeSheet timeSheet = mapper.transformToTimesheet(leaveRequest);
 
         // Assert
         assertEquals(1, timeSheet.getEntries().size());
