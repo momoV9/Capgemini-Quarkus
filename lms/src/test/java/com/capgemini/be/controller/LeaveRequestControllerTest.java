@@ -1,46 +1,46 @@
 package com.capgemini.be.controller;
 
-import com.capgemini.be.lms.model.LeaveRequest;
-import com.capgemini.be.lms.model.LeaveType;
-import com.capgemini.be.lms.model.Reason;
-import com.capgemini.be.lms.model.Status;
+import com.capgemini.lms.client.LeaveRequestClient;
+import com.capgemini.lms.controller.LeaveRequestController;
+import com.capgemini.lms.model.LeaveRequest;
 import io.quarkus.test.junit.QuarkusTest;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
-import javax.ws.rs.core.MediaType;
-
-import java.time.LocalDate;
+import javax.ws.rs.core.Response;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @QuarkusTest
-public class LeaveRequestControllerTest {
+ class LeaveRequestControllerTest {
+
+    private static class MockLeaveRequestClient implements LeaveRequestClient {
+        private LeaveRequest capturedLeaveRequest;
+
+        @Override
+        public Response sendDataToSync(LeaveRequest leaveRequest) {
+            capturedLeaveRequest = leaveRequest;
+            return Response.ok().build();
+        }
+
+        public LeaveRequest getCapturedLeaveRequest() {
+            return capturedLeaveRequest;
+        }
+    }
 
     @Test
-    public void testSendLeaveRequestToSync() {
+    void sendLeaveRequestToSync() {
         // Arrange
         LeaveRequest leaveRequest = new LeaveRequest();
-        leaveRequest.setLocalEmployeeId(1);
-        leaveRequest.setLeaveType(LeaveType.VACATION);
-        leaveRequest.setStartDate(LocalDate.of(2023, 5, 16));
-        leaveRequest.setEndDate(LocalDate.of(2023, 5, 30));
-        leaveRequest.setReason(Reason.MARRIAGE);
-        leaveRequest.setStatus(Status.APPROVED);
-        int expectedStatusCode = 204;
+
+        MockLeaveRequestClient mockLeaveRequestClient = new MockLeaveRequestClient();
+        LeaveRequestController leaveRequestController = new LeaveRequestController();
+        leaveRequestController.leaveRequestClient = mockLeaveRequestClient;
 
         // Act
-        Response response = RestAssured.given()
-                .contentType(MediaType.APPLICATION_JSON)
-                .body(leaveRequest)
-                .when()
-                .post("/leaves")
-                .then()
-                .extract()
-                .response();
+        leaveRequestController.sendLeaveRequestToSync(leaveRequest);
 
         // Assert
-        assertEquals(expectedStatusCode, response.getStatusCode());
+        LeaveRequest capturedRequest = mockLeaveRequestClient.getCapturedLeaveRequest();
+        assertEquals(leaveRequest, capturedRequest);
     }
 }
