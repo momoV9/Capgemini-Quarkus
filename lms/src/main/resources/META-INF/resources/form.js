@@ -25,7 +25,7 @@ function submitLeaveRequest(event) {
     };
 
     // Send the leave request to the server
-    fetch('/sync', {
+    fetch('http://localhost:8081/sync', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
