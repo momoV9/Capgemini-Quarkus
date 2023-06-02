@@ -22,7 +22,7 @@ function submitLeaveRequest(event) {
         reason,
     };
 
-    fetch('http://localhost:8081/sync', {
+    fetch('http://localhost:8080/leaves', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
